@@ -1,0 +1,60 @@
+rm(list=ls())
+library(readxl) 
+library(grid)
+library(gridExtra)
+library(reshape)
+
+### 2021 collections ####
+meta21 <- read_xlsx("Genotype_Samples_2021.xlsx")
+meta21$Longitude <- as.numeric(meta21$Longitude)
+meta21$Latitude <- as.numeric(meta21$Latitude)
+meta21$YrMth <- substr(meta21$Date,1,7)
+meta21$Species[!(meta21$Species%in%c("ACER","APAL","DEND","OANN","OFAV","OFRA","PAST","PSTR"))] <- "other"
+meta21 <- as.data.frame(meta21[,c("YrMth","Species","Location","Longitude","Latitude")])
+
+a <- table(meta21$Species,meta21$Location)
+print(a)
+
+### 2022 collections ####
+meta22 <- read_xlsx("Genotype_Samples_2022.xlsx")
+meta22$Location <- substr(meta22$VialID,1,3)
+meta22$Longitude <- as.numeric(meta22$Longitude)
+meta22$Latitude <- as.numeric(meta22$Latitude)
+meta22$YrMth <- substr(meta22$Date,1,7)
+meta22$Species[!(meta22$Species%in%c("ACER","APAL","DEND","OANN","OFAV","OFRA","PAST","PSTR"))] <- "other"
+meta22 <- as.data.frame(meta22[,c("YrMth","Species","Location","Longitude","Latitude")])
+b <- table(meta22$Species,meta22$Location)
+
+a.df <- as.data.frame(a)
+a.df$Var2 <- paste("2021_",a.df$Var2,sep="")
+b.df <- as.data.frame(b)
+all <- rbind(a.df,b.df)
+all2 <- cast(all,Var2~Var1,sum)
+lat21 <- tapply(meta21$Latitude,meta21$Location,mean,na.rm=T)
+lon21 <- tapply(meta21$Longitude,meta21$Location,mean,na.rm=T)
+lat22 <- tapply(meta22$Latitude,meta22$Location,mean,na.rm=T)
+lon22 <- tapply(meta22$Longitude,meta22$Location,mean,na.rm=T)
+latlon <- data.frame(lat=c(lat21,lat22),lon=c(lon21,lon22))
+
+pdf(paste(date(),"_SpeciesByPopulations.pdf"),width=11,height=5)
+grid.table(a)
+grid.newpage()
+grid.table(b)
+grid.newpage()
+grid.table(latlon)
+dev.off()
+
+### make kml file
+##### from https://dmbeskow.github.io/html/geo4.html
+library(ggmap) #devtools::install_github("dkahle/ggmap")
+library(maptools)
+library(rgdal)
+all2 <- data.frame(all2)
+all2$lat <- latlon$lat
+all2$lon <- latlon$lon
+all3 <- all2[complete.cases(all2$lon),]
+coordinates(all3) <- c("lon","lat")
+proj4string(all3)<-CRS("+proj=longlat +datum=WGS84")
+
+writeOGR(all3, dsn=paste(date(),".coralMeta.kml"), layer= "Var2", driver="KML")
+

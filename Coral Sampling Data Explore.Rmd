@@ -1,7 +1,8 @@
 ---
-title: "USVI_Coral Sampling_2022"
+title: "USVI Coral Sampling Data Exploration"
 author: "Erik Sotka, Kaylie Anne Costa, Emily Sesno"
-output: html_document
+output:
+  html_document:
     code_folding: hide
     toc: yes
     toc_depth: 6
@@ -12,13 +13,10 @@ editor_options:
   chunk_output_type: console
 ---
 
-#  Setup  
-
-Set up workspace, load data, and load required packages. 
-```{r setup, message=FALSE, warning=FALSE}
+```{r setup, message=FALSE, warning=FALSE, echo=FALSE}
 rm(list=ls(all=TRUE))
 
-results <- read.csv("/Users/emilysesno/Desktop/Emily/USVI_Coral_Sampling/Data/Genotype_Samples_2022.csv", header=T, na.strings="NA")
+results <- read.csv("Data/Genotype_Samples_2022.csv", header=T, na.strings="NA")
 
 library("plyr") 
 library("dplyr")
@@ -30,8 +28,8 @@ library("janitor") #allows to group by Location (group_by wasn't working properl
 
 ```
 
-
-```{r data explore}
+# Species Counts by Location
+```{r data explore, echo=FALSE}
 
 spcount <- 
   results %>% 
@@ -39,8 +37,12 @@ spcount <-
   separate(col=VialID, into=c('Location', 'SampNum'), sep='_') %>% 
   tabyl(Species, Location)
 
+spcount
 
+```
 
+# Future Chunk
+```{r}
 
 ```
 
