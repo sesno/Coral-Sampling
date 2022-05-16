@@ -16,7 +16,7 @@ editor_options:
 ```{r setup, message=FALSE, warning=FALSE, echo=FALSE}
 rm(list=ls(all=TRUE))
 
-results <- read.csv("Data/Genotype_Samples_2022.csv", header=T, na.strings="NA")
+results <- read.csv("Data/Genotype_Samples_2022.csv", header=T, na.strings="na")
 
 library("plyr") 
 library("dplyr")
@@ -35,6 +35,7 @@ spcount <-
   results %>% 
   select("VialID", "Species") %>% 
   separate(col=VialID, into=c('Location', 'SampNum'), sep='_') %>% 
+  drop_na(Species) %>% 
   tabyl(Species, Location)
 
 spcount
