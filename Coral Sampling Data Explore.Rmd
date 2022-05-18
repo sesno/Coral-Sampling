@@ -42,8 +42,34 @@ spcount
 
 ```
 
-# Future Chunk
+# GPS Data Exploration
 ```{r}
+
+#create new data frame gpsUpdate that accurately represents the time for correct time zone. Will use this to autofind corresponding times in our metadata sheet
+
+gps <- read.csv("Data/GPS_13May.csv", header=T, na.strings="NA", stringsAsFactors=FALSE)
+
+gpsUpdate <- 
+  gps %>% 
+    select("lat", "lon", "time") %>% 
+    mutate(time=str_replace_all(time,"[:punct:]","-")) %>% 
+    separate(col=time, into=c('Year', 'Month', "DayHour", "Min","Sec"),
+             sep='-') %>% 
+    separate(col=DayHour, into=c('Day', 'Hour'), sep='T') %>% 
+    select("lat","lon","Year","Month","Day","Hour","Min") %>% 
+    unite(col="Date", c("Year","Month","Day"), sep = "-") %>% 
+    mutate(Hour = as.numeric(Hour), Min=as.numeric(Min)) %>% 
+    mutate(Hour=Hour-3) %>% 
+    unite(col="Time", c("Hour","Min"), sep=':') %>%
+    mutate(Date=strptime(Date, format = "%Y-%m-%d"))
+
+str(gpsUpdate)
+    
+
+
+
+
+
 
 ```
 
