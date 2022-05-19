@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Var2" id="Var2">
+	<SimpleField name="Var2" type="string"></SimpleField>
+	<SimpleField name="ACER" type="int"></SimpleField>
+	<SimpleField name="APAL" type="int"></SimpleField>
+	<SimpleField name="DEND" type="int"></SimpleField>
+	<SimpleField name="OANN" type="int"></SimpleField>
+	<SimpleField name="OFAV" type="int"></SimpleField>
+	<SimpleField name="OFRA" type="int"></SimpleField>
+	<SimpleField name="other" type="int"></SimpleField>
+	<SimpleField name="PAST" type="int"></SimpleField>
+	<SimpleField name="PSTR" type="int"></SimpleField>
+</Schema>
+<Folder><name>Var2</name>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Var2">
+		<SimpleData name="Var2">2021_BUIS</SimpleData>
+		<SimpleData name="ACER">20</SimpleData>
+		<SimpleData name="APAL">26</SimpleData>
+		<SimpleData name="DEND">4</SimpleData>
+		<SimpleData name="OANN">33</SimpleData>
+		<SimpleData name="OFAV">21</SimpleData>
+		<SimpleData name="OFRA">22</SimpleData>
+		<SimpleData name="other">1</SimpleData>
+		<SimpleData name="PAST">22</SimpleData>
+		<SimpleData name="PSTR">22</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-64.6127118976813,17.7887365081183</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Var2">
+		<SimpleData name="Var2">2021_Flat Rock</SimpleData>
+		<SimpleData name="ACER">33</SimpleData>
+		<SimpleData name="APAL">0</SimpleData>
+		<SimpleData name="DEND">0</SimpleData>
+		<SimpleData name="OANN">0</SimpleData>
+		<SimpleData name="OFAV">8</SimpleData>
+		<SimpleData name="OFRA">0</SimpleData>
+		<SimpleData name="other">0</SimpleData>
+		<SimpleData name="PAST">0</SimpleData>
+		<SimpleData name="PSTR">0</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-64.9878817490701,18.3163978645045</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Var2">
+		<SimpleData name="Var2">2021_Fortuna Bay</SimpleData>
+		<SimpleData name="ACER">0</SimpleData>
+		<SimpleData name="APAL">12</SimpleData>
+		<SimpleData name="DEND">0</SimpleData>
+		<SimpleData name="OANN">1</SimpleData>
+		<SimpleData name="OFAV">3</SimpleData>
+		<SimpleData name="OFRA">0</SimpleData>
+		<SimpleData name="other">0</SimpleData>
+		<SimpleData name="PAST">2</SimpleData>
+		<SimpleData name="PSTR">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-65.0159618866286,18.3446591680771</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Var2">
+		<SimpleData name="Var2">2021_Hawks Nest Bay</SimpleData>
+		<SimpleData name="ACER">0</SimpleData>
+		<SimpleData name="APAL">9</SimpleData>
+		<SimpleData name="DEND">0</SimpleData>
+		<SimpleData name="OANN">1</SimpleData>
+		<SimpleData name="OFAV">0</SimpleData>
+		<SimpleData name="OFRA">18</SimpleData>
+		<SimpleData name="other">2</SimpleData>
+		<SimpleData name="PAST">18</SimpleData>
+		<SimpleData name="PSTR">19</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-64.7811700018461,18.3486656510186</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Var2">
+		<SimpleData name="Var2">2021_Tektite</SimpleData>
+		<SimpleData name="ACER">0</SimpleData>
+		<SimpleData name="APAL">0</SimpleData>
+		<SimpleData name="DEND">0</SimpleData>
+		<SimpleData name="OANN">18</SimpleData>
+		<SimpleData name="OFAV">0</SimpleData>
+		<SimpleData name="OFRA">0</SimpleData>
+		<SimpleData name="other">4</SimpleData>
+		<SimpleData name="PAST">0</SimpleData>
+		<SimpleData name="PSTR">0</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-64.7617415019443,18.3363621189658</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Var2">
+		<SimpleData name="Var2">BLP</SimpleData>
+		<SimpleData name="ACER">0</SimpleData>
+		<SimpleData name="APAL">0</SimpleData>
+		<SimpleData name="DEND">0</SimpleData>
+		<SimpleData name="OANN">11</SimpleData>
+		<SimpleData name="OFAV">2</SimpleData>
+		<SimpleData name="OFRA">15</SimpleData>
+		<SimpleData name="other">0</SimpleData>
+		<SimpleData name="PAST">20</SimpleData>
+		<SimpleData name="PSTR">7</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-64.9853963636364,18.3445474545455</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Var2">
+		<SimpleData name="Var2">BUK</SimpleData>
+		<SimpleData name="ACER">8</SimpleData>
+		<SimpleData name="APAL">0</SimpleData>
+		<SimpleData name="DEND">0</SimpleData>
+		<SimpleData name="OANN">16</SimpleData>
+		<SimpleData name="OFAV">0</SimpleData>
+		<SimpleData name="OFRA">16</SimpleData>
+		<SimpleData name="other">2</SimpleData>
+		<SimpleData name="PAST">16</SimpleData>
+		<SimpleData name="PSTR">16</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-64.8985661538461,18.2782107692308</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Var2">
+		<SimpleData name="Var2">FLR</SimpleData>
+		<SimpleData name="ACER">0</SimpleData>
+		<SimpleData name="APAL">0</SimpleData>
+		<SimpleData name="DEND">0</SimpleData>
+		<SimpleData name="OANN">17</SimpleData>
+		<SimpleData name="OFAV">22</SimpleData>
+		<SimpleData name="OFRA">18</SimpleData>
+		<SimpleData name="other">0</SimpleData>
+		<SimpleData name="PAST">0</SimpleData>
+		<SimpleData name="PSTR">20</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-64.9906223880597,18.3180580597015</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Var2">
+		<SimpleData name="Var2">MEG</SimpleData>
+		<SimpleData name="ACER">0</SimpleData>
+		<SimpleData name="APAL">0</SimpleData>
+		<SimpleData name="DEND">0</SimpleData>
+		<SimpleData name="OANN">17</SimpleData>
+		<SimpleData name="OFAV">18</SimpleData>
+		<SimpleData name="OFRA">18</SimpleData>
+		<SimpleData name="other">0</SimpleData>
+		<SimpleData name="PAST">18</SimpleData>
+		<SimpleData name="PSTR">14</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-64.928,18.37155</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Var2">
+		<SimpleData name="Var2">SAP</SimpleData>
+		<SimpleData name="ACER">2</SimpleData>
+		<SimpleData name="APAL">19</SimpleData>
+		<SimpleData name="DEND">0</SimpleData>
+		<SimpleData name="OANN">5</SimpleData>
+		<SimpleData name="OFAV">12</SimpleData>
+		<SimpleData name="OFRA">0</SimpleData>
+		<SimpleData name="other">0</SimpleData>
+		<SimpleData name="PAST">15</SimpleData>
+		<SimpleData name="PSTR">17</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-64.8479114285714,18.3355134285714</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

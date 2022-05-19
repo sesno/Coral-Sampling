@@ -1,0 +1,55 @@
+---
+title: "GPS Configuration"
+author: "Kaylie Anne Costa"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+
+rm(list=ls(all=TRUE))
+
+cdata<-read.csv('Data/Genotype_Samples_2022.csv')
+gps_data<-read.csv('Data/GPS_5_17_22.csv')
+
+library(tidyr)
+library(tidyverse)
+library(stringr)
+library(data.table) #export csv
+
+```
+
+
+```{r GPS Config, echo=FALSE}
+
+#Change date format
+cdata$Date_f<-strptime(as.character(cdata$Date),"%m/%d/%Y")
+format(cdata$Date_f,"%Y-%m-%d")
+
+#separate hours and minutes
+cdata1<-separate(cdata, col=Time.Collected, 
+                 into=c('hours','minutes'),sep=':')
+cdata1$hours<-as.numeric(cdata1$hours)
+cdata1$hours_u<-cdata1$hours+4
+
+
+#combine time data
+cdata1$GPS.time.point..UTC.<-paste0(cdata1$hours_u,":",cdata1$minutes)
+
+#combine date and time with T separator
+cdata1$time.ns<-paste0(as.character(cdata1$Date_f),"T",cdata1$GPS.time.point..UTC.)
+
+#remove seconds from GPS data
+gps_data$time.ns<-substr(as.character(gps_data$time),start=0,stop=nchar(as.character(gps_data$time))-4)
+
+#delete the repeats
+gps_data1<-gps_data[!duplicated(gps_data$time.ns),]
+
+#match and insert lat long columns into cdata
+gps_data_final<-select(gps_data1,"time.ns","lat","lon")
+
+data_comb=cdata1%>%full_join(gps_data_final,by="time.ns")
+
+#export csv
+write.csv(data_comb,"Data/GPS_data_export517_gittest.csv", row.names = TRUE)
+```
+

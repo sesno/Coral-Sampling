@@ -1,6 +1,6 @@
 ---
 title: "USVI Coral Sampling Data Exploration"
-author: "Erik Sotka, Kaylie Anne Costa, Emily Sesno"
+author: "Emily Sesno"
 output:
   html_document:
     code_folding: hide
