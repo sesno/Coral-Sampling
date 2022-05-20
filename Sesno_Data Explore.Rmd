@@ -23,8 +23,11 @@ library("dplyr")
 library("tidyverse")
 library("knitr")
 library("tidyr")
-
 library("janitor") #allows to group by Location (group_by wasn't working properly)
+
+library("DT") #used to create html file with color coded species counts
+library("webshot")
+
 
 ```
 
@@ -36,11 +39,55 @@ spcount <-
   select("VialID", "Species") %>% 
   separate(col=VialID, into=c('Location', 'SampNum'), sep='_') %>% 
   drop_na(Species) %>% 
-  tabyl(Species, Location)
+  tabyl(Species, Location) 
+  
+spcountColor <-
+  spcount %>% 
+  datatable(head(spcount), class = 'cell-border stripe hover compact') %>%
+  formatStyle('Species', fontWeight = 'bold') %>% 
+  formatStyle('BLP', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+  formatStyle('BUK', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')),
+              fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+  formatStyle('COK', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green', 'green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+  formatStyle('FLR', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+  formatStyle('IBR', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+  formatStyle('MEG', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+  formatStyle('SAP', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+  formatStyle('SEA', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+  formatStyle('UVI', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+                fontWeight = styleInterval(14, c('normal', 'bold')))
 
-spcount
+
+saveWidget(spcountColor, "Documents/spcounttable.html") #would love to figure out a different way to save so we don't have all the excess html stuff...
+  
 
 ```
+
 
 # GPS Data Exploration
 ```{r}
@@ -51,25 +98,33 @@ gps <- read.csv("Data/GPS_13May.csv", header=T, na.strings="NA", stringsAsFactor
 
 gpsUpdate <- 
   gps %>% 
+  #Select relevant variables
     select("lat", "lon", "time") %>% 
+  #adjust time column to have all common separators 
     mutate(time=str_replace_all(time,"[:punct:]","-")) %>% 
+  #separate the time column to have Date and times
     separate(col=time, into=c('Year', 'Month', "DayHour", "Min","Sec"),
              sep='-') %>% 
+  #separate further to account for a random T in GPS data  
     separate(col=DayHour, into=c('Day', 'Hour'), sep='T') %>% 
+  #Select for relevent varaibles    
     select("lat","lon","Year","Month","Day","Hour","Min") %>% 
+  #recombine the date column into one   
     unite(col="Date", c("Year","Month","Day"), sep = "-") %>% 
+  #make hour column numeric from character (not sure why it saw it as character)   
     mutate(Hour = as.numeric(Hour), Min=as.numeric(Min)) %>% 
+  #add a column to adjust for time change issues
     mutate(Hour=Hour-3) %>% 
-    unite(col="Time", c("Hour","Min"), sep=':') %>%
-    mutate(Date=strptime(Date, format = "%Y-%m-%d"))
-
-str(gpsUpdate)
-    
-
+  #recombine the hour and min of time to be one column
+    unite(col="Time", c("Hour","Min"), sep=':') %>% 
+  #create nuew column that establishes the date as a proper date format
+    mutate(Date=strptime(Date, format = "%Y-%m-%d")) 
 
 
 
-
+#check the types of variables
+str(gpsUpdate) 
 
 ```
+
 
