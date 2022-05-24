@@ -80,6 +80,14 @@ spcountColor <-
   formatStyle('UVI', 
               color = styleInterval(c(11, 14, 15), 
                                     c('red', 'purple', 'green','green')), 
+                fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+  formatStyle('THC', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+                fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+  formatStyle('COW', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
                 fontWeight = styleInterval(14, c('normal', 'bold')))
 
 
