@@ -9,7 +9,8 @@ output: html_document
 rm(list=ls(all=TRUE))
 
 cdata<-read.csv('Data/Genotype_Samples_2022.csv')
-gps_data<-read.csv('Data/GPS_5_17_22.csv')
+#Change file to match the day that you are looking at
+gps_data<-read.csv('Data/GPS Data/GPS_THCCOW_23May2022.csv')
 
 library(tidyr)
 library(tidyverse)
@@ -50,6 +51,6 @@ gps_data_final<-select(gps_data1,"time.ns","lat","lon")
 data_comb=cdata1%>%full_join(gps_data_final,by="time.ns")
 
 #export csv
-write.csv(data_comb,"Data/GPS_data_export517_gittest.csv", row.names = TRUE)
+write.csv(data_comb,"Data/GPS Data/GPS_THCCOW_23May2022_Matched.csv", row.names = TRUE)
 ```
 

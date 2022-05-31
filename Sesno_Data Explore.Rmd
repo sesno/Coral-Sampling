@@ -88,7 +88,20 @@ spcountColor <-
   formatStyle('COW', 
               color = styleInterval(c(11, 14, 15), 
                                     c('red', 'purple', 'green','green')), 
+                fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+  formatStyle('MER', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+                fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+  formatStyle('BOT', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+                fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+  formatStyle('CNU', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
                 fontWeight = styleInterval(14, c('normal', 'bold')))
+  
 
 
 saveWidget(spcountColor, "Documents/spcounttable.html") #would love to figure out a different way to save so we don't have all the excess html stuff...
@@ -102,7 +115,8 @@ saveWidget(spcountColor, "Documents/spcounttable.html") #would love to figure ou
 
 #create new data frame gpsUpdate that accurately represents the time for correct time zone. Will use this to autofind corresponding times in our metadata sheet
 
-gps <- read.csv("Data/GPS_13May.csv", header=T, na.strings="NA", stringsAsFactors=FALSE)
+#read csv, change file name to the file that matches the day you are exploring
+gps <- read.csv("Data/GPS Data/GPS_COK_26May2022.csv", header=T, na.strings="NA", stringsAsFactors=FALSE)
 
 gpsUpdate <- 
   gps %>% 
@@ -115,24 +129,35 @@ gpsUpdate <-
              sep='-') %>% 
   #separate further to account for a random T in GPS data  
     separate(col=DayHour, into=c('Day', 'Hour'), sep='T') %>% 
-  #Select for relevent varaibles    
-    select("lat","lon","Year","Month","Day","Hour","Min") %>% 
+  #Select for relevent varaibles, remove the Z in seconds, reselect variables
+    select("Year","Month","Day","Hour","Min", "lat","lon") %>%
+    mutate(Month = as.numeric(Month)) %>% 
   #recombine the date column into one   
-    unite(col="Date", c("Year","Month","Day"), sep = "-") %>% 
-  #make hour column numeric from character (not sure why it saw it as character)   
-    mutate(Hour = as.numeric(Hour), Min=as.numeric(Min)) %>% 
+    unite(col="Date", c("Month","Day","Year",), sep = "/") %>% 
+  #make hour column numeric from character (not sure why it saw it as character) and ensure the seconds are 01, 02 etc.
+    mutate(Hour = as.numeric(Hour), Min= sprintf("%02d", as.numeric(Min))) %>%
   #add a column to adjust for time change issues
-    mutate(Hour=Hour-3) %>% 
+    mutate(Hour=Hour-4) %>% #only do this if the time is wrong, from earlier days
   #recombine the hour and min of time to be one column
     unite(col="Time", c("Hour","Min"), sep=':') %>% 
-  #create nuew column that establishes the date as a proper date format
-    mutate(Date=strptime(Date, format = "%Y-%m-%d")) 
+  #create nuew column that establishes the date as a proper date format, not sure if necessary?
+    #mutate(Date=strptime(Date, format = "%Y-%m-%d")) 
+  #Remove duplicate times
+  distinct(Time, .keep_all=TRUE)
 
 
+resultsforgps <-
+  results %>% 
+    select("Date","VialID", "Tag..", "Time.Collected", "Latitude", "Longitude") %>% 
+    rename(Time=Time.Collected)
 
-#check the types of variables
-str(gpsUpdate) 
+gpsMatched <-
+  full_join(resultsforgps, gpsUpdate, by = c("Date","Time"))
 
+#Save CSV file, change name to match date explored
+#write.csv(gpsMatched,"Data/GPS Data/GPS_COK_24May2022_matched2.csv", row.names = TRUE)
+
+    
 ```
 
 
