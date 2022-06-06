@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>St Croix Sites.kml</name>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin_hl0">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin0">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Folder>
+		<name>My Places</name>
+		<open>1</open>
+		<Style>
+			<ListStyle>
+				<listItemType>check</listItemType>
+				<ItemIcon>
+					<state>open</state>
+					<href>:/mysavedplaces_open.png</href>
+				</ItemIcon>
+				<ItemIcon>
+					<state>closed</state>
+					<href>:/mysavedplaces_closed.png</href>
+				</ItemIcon>
+				<bgColor>00ffffff</bgColor>
+				<maxSnippetLines>2</maxSnippetLines>
+			</ListStyle>
+		</Style>
+		<Placemark>
+			<name>Butler Bay North (BUBN)</name>
+			<description>TNC APAL Collection
+
+Also APAL Monitoring for Corina Marks of Thriving Island</description>
+			<LookAt>
+				<longitude>-64.75090505647572</longitude>
+				<latitude>17.73474011576486</latitude>
+				<altitude>0</altitude>
+				<heading>14.68301546437965</heading>
+				<tilt>0</tilt>
+				<range>35017.47626165226</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-64.89228,17.75033055555556,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Cane Bay East Nursery (CABE)</name>
+			<description>TNC ACER Nursery</description>
+			<LookAt>
+				<longitude>-64.89378269365777</longitude>
+				<latitude>17.75320190711686</latitude>
+				<altitude>0</altitude>
+				<heading>14.63608519973699</heading>
+				<tilt>37.82952159075886</tilt>
+				<range>2220.35004198689</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-64.81201,17.77435,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Buck Island Nursery (BUIS)</name>
+			<description>APAL Nursery</description>
+			<LookAt>
+				<longitude>-64.8142480762541</longitude>
+				<latitude>17.76964091249975</latitude>
+				<altitude>0</altitude>
+				<heading>10.44925285596377</heading>
+				<tilt>20.59513050372886</tilt>
+				<range>4238.949921714252</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-64.61199999999999,17.78925,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Cane Bay East Reef (CBER)</name>
+			<description>TNC Spawning/collection for: Orbicella, PSTR, APAL, PAST, Diploria labyrinthiformis</description>
+			<LookAt>
+				<longitude>-64.72681846210833</longitude>
+				<latitude>17.77316159336684</latitude>
+				<altitude>0</altitude>
+				<heading>14.5443338996199</heading>
+				<tilt>11.8356953521039</tilt>
+				<range>43217.37997575787</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-64.81161,17.77423055555555,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Deep End Beach (DEEB)</name>
+			<description>TNC spanning/ collection for OANN, OFAV, PSTR</description>
+			<LookAt>
+				<longitude>-64.76801627596701</longitude>
+				<latitude>17.75073148074311</latitude>
+				<altitude>0</altitude>
+				<heading>14.67164726700103</heading>
+				<tilt>34.80382212178594</tilt>
+				<range>30020.59491631769</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-64.66929,17.76139,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Buck Island East (BUIE)</name>
+			<description>TNC spawning/collection APAL, PAST, Orbicella</description>
+			<LookAt>
+				<longitude>-64.78004660463266</longitude>
+				<latitude>17.76126522356948</latitude>
+				<altitude>0</altitude>
+				<heading>14.64898190541393</heading>
+				<tilt>34.32350787802248</tilt>
+				<range>46201.65241142476</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-64.61203,17.78511111111111,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Long Reef WAPA (LRWA)</name>
+			<description>TNC Spawning/collection for Orbicella, PSTR, APAL, PAST
+
+Also suggestion from Leslie to collect DCYL on East reef</description>
+			<LookAt>
+				<longitude>-64.61524943181001</longitude>
+				<latitude>17.80650417326031</latitude>
+				<altitude>0</altitude>
+				<heading>14.67289471019398</heading>
+				<tilt>41.35967029699538</tilt>
+				<range>6249.726736963002</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-64.71148888888889,17.75911111111111,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Cane Bay West</name>
+			<description>Rough estimation as request from Leslie</description>
+			<LookAt>
+				<longitude>-64.83754645852275</longitude>
+				<latitude>17.7715201053638</latitude>
+				<altitude>0</altitude>
+				<heading>13.27045933634068</heading>
+				<tilt>29.01796194661105</tilt>
+				<range>11733.9291917855</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-64.83836538439954,17.76475469265999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>White Horse (WH)</name>
+			<description>UVI APAL Monitoring</description>
+			<LookAt>
+				<longitude>-64.72257094321552</longitude>
+				<latitude>17.80094437185258</latitude>
+				<altitude>0</altitude>
+				<heading>13.31028523404177</heading>
+				<tilt>29.28481565961845</tilt>
+				<range>58851.26205376678</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-64.74867,17.78701111111111,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Channel Rock (CR)</name>
+			<description>UVI APAL Monitoring</description>
+			<LookAt>
+				<longitude>-64.7421158579334</longitude>
+				<latitude>17.78274406088649</latitude>
+				<altitude>0</altitude>
+				<heading>13.30650152031806</heading>
+				<tilt>33.7468781739137</tilt>
+				<range>12252.10383929148</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-64.59161,17.76713055555555,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Teague Bay West (TBW)</name>
+			<description>UVI APAL Monitoring Site</description>
+			<LookAt>
+				<longitude>-64.68800505119418</longitude>
+				<latitude>17.8101036474307</latitude>
+				<altitude>0</altitude>
+				<heading>13.29726093054594</heading>
+				<tilt>40.69235924254945</tilt>
+				<range>59020.46613663092</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-64.61577,17.76483,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Teague Bay East (TBE)</name>
+			<description>UVI APAL Monitoring</description>
+			<LookAt>
+				<longitude>-64.62181417656366</longitude>
+				<latitude>17.77760749732488</latitude>
+				<altitude>0</altitude>
+				<heading>13.28997776362527</heading>
+				<tilt>50.0066583002541</tilt>
+				<range>7223.243903847254</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-64.60087,17.76215,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Green Cay (GC)</name>
+			<description>UVI APAL Monitoring turtle poop</description>
+			<LookAt>
+				<longitude>-64.63332250613435</longitude>
+				<latitude>17.79821316532475</latitude>
+				<altitude>0</altitude>
+				<heading>13.28648464772851</heading>
+				<tilt>50.06846825055542</tilt>
+				<range>16210.98054559277</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-64.66393888888889,17.76806944444444,0</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>
