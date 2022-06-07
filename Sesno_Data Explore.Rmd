@@ -32,16 +32,18 @@ library("webshot")
 ```
 
 # Species Counts by Location
+## St. Thomas
 ```{r data explore, echo=FALSE}
 
-spcount <- 
+spcountSTT <- 
   results %>% 
-  select("VialID", "Species") %>% 
+  select("VialID", "Species", "Island") %>% 
+  filter(Island %in% c("STT", "CWORI Nursery")) %>% 
   separate(col=VialID, into=c('Location', 'SampNum'), sep='_') %>% 
   drop_na(Species) %>% 
   tabyl(Species, Location) 
   
-spcountColor <-
+spcountColorSTT <-
   spcount %>% 
   datatable(head(spcount), class = 'cell-border stripe hover compact') %>%
   formatStyle('Species', fontWeight = 'bold') %>% 
@@ -108,7 +110,36 @@ spcountColor <-
   
 
 
-saveWidget(spcountColor, "Documents/spcounttable.html") #would love to figure out a different way to save so we don't have all the excess html stuff...
+saveWidget(spcountColorSTT, "Documents/spcounttable.html_StThomas") #would love to figure out a different way to save so we don't have all the excess html stuff...
+  
+
+```
+
+
+## St. Croix
+```{r data explore, echo=FALSE}
+
+spcountSTX <- 
+  results %>% 
+  select("VialID", "Species", "Island") %>% 
+  filter(Island == "STX") %>% 
+  separate(col=VialID, into=c('Location', 'SampNum'), sep='_') %>% 
+  drop_na(Species) %>% 
+  tabyl(Species, Location) 
+  
+spcountColorSTX <-
+  spcountSTX %>% 
+  datatable(head(spcountSTX), class = 'cell-border stripe hover compact') %>%
+  formatStyle('Species', fontWeight = 'bold') %>% 
+  formatStyle('SRA', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold')))
+ 
+  
+
+
+saveWidget(spcountColorSTX, "Documents/spcounttable_StCroix.html") #would love to figure out a different way to save so we don't have all the excess html stuff...
   
 
 ```
