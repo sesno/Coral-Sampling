@@ -134,6 +134,10 @@ spcountColorSTX <-
   formatStyle('SRA', 
               color = styleInterval(c(11, 14, 15), 
                                     c('red', 'purple', 'green','green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+  formatStyle('BIA', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
               fontWeight = styleInterval(14, c('normal', 'bold')))
  
   
