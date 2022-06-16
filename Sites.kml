@@ -1,0 +1,948 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Sites.kml</name>
+	<StyleMap id="m_ylw-pushpin0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin0">
+		<IconStyle>
+			<color>ff2800ff</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl0">
+		<IconStyle>
+			<color>ff2800ff</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Folder>
+		<name>My Places</name>
+		<open>1</open>
+		<Style>
+			<ListStyle>
+				<listItemType>check</listItemType>
+				<ItemIcon>
+					<state>open</state>
+					<href>:/mysavedplaces_open.png</href>
+				</ItemIcon>
+				<ItemIcon>
+					<state>closed</state>
+					<href>:/mysavedplaces_closed.png</href>
+				</ItemIcon>
+				<bgColor>00ffffff</bgColor>
+				<maxSnippetLines>2</maxSnippetLines>
+			</ListStyle>
+		</Style>
+		<Folder>
+			<name>St. Croix Sites</name>
+			<Style>
+				<ListStyle>
+					<listItemType>check</listItemType>
+					<ItemIcon>
+						<state>open</state>
+						<href>:/mysavedplaces_open.png</href>
+					</ItemIcon>
+					<ItemIcon>
+						<state>closed</state>
+						<href>:/mysavedplaces_closed.png</href>
+					</ItemIcon>
+					<bgColor>00ffffff</bgColor>
+					<maxSnippetLines>2</maxSnippetLines>
+				</ListStyle>
+			</Style>
+			<Placemark>
+				<name>Butler Bay North (BUBN)</name>
+				<description>TNC APAL Collection
+
+Also APAL Monitoring for Corina Marks of Thriving Island</description>
+				<LookAt>
+					<longitude>-64.75090505647572</longitude>
+					<latitude>17.73474011576486</latitude>
+					<altitude>0</altitude>
+					<heading>14.68301546437965</heading>
+					<tilt>0</tilt>
+					<range>35017.47626165226</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#m_ylw-pushpin0</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>-64.89228,17.75033055555556,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Cane Bay East Nursery (CABE)</name>
+				<description>TNC ACER Nursery</description>
+				<LookAt>
+					<longitude>-64.89378269365777</longitude>
+					<latitude>17.75320190711686</latitude>
+					<altitude>0</altitude>
+					<heading>14.63608519973699</heading>
+					<tilt>37.82952159075886</tilt>
+					<range>2220.35004198689</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#m_ylw-pushpin0</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>-64.81201,17.77435,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Buck Island Nursery (BUIS)</name>
+				<description>APAL Nursery</description>
+				<LookAt>
+					<longitude>-64.8142480762541</longitude>
+					<latitude>17.76964091249975</latitude>
+					<altitude>0</altitude>
+					<heading>10.44925285596377</heading>
+					<tilt>20.59513050372886</tilt>
+					<range>4238.949921714252</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#m_ylw-pushpin0</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>-64.61199999999999,17.78925,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Cane Bay East Reef (CBER)</name>
+				<description>TNC Spawning/collection for: Orbicella, PSTR, APAL, PAST, Diploria labyrinthiformis</description>
+				<LookAt>
+					<longitude>-64.72681846210833</longitude>
+					<latitude>17.77316159336684</latitude>
+					<altitude>0</altitude>
+					<heading>14.5443338996199</heading>
+					<tilt>11.8356953521039</tilt>
+					<range>43217.37997575787</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#m_ylw-pushpin0</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>-64.81161,17.77423055555555,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Deep End Beach (DEEB)</name>
+				<description>TNC spanning/ collection for OANN, OFAV, PSTR</description>
+				<LookAt>
+					<longitude>-64.76801627596701</longitude>
+					<latitude>17.75073148074311</latitude>
+					<altitude>0</altitude>
+					<heading>14.67164726700103</heading>
+					<tilt>34.80382212178594</tilt>
+					<range>30020.59491631769</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#m_ylw-pushpin0</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>-64.66929,17.76139,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Buck Island East (BUIE)</name>
+				<description>TNC spawning/collection APAL, PAST, Orbicella</description>
+				<LookAt>
+					<longitude>-64.78004660463266</longitude>
+					<latitude>17.76126522356948</latitude>
+					<altitude>0</altitude>
+					<heading>14.64898190541393</heading>
+					<tilt>34.32350787802248</tilt>
+					<range>46201.65241142476</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#m_ylw-pushpin0</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>-64.61203,17.78511111111111,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Long Reef WAPA (LRWA)</name>
+				<description>TNC Spawning/collection for Orbicella, PSTR, APAL, PAST
+
+Also suggestion from Leslie to collect DCYL on East reef</description>
+				<LookAt>
+					<longitude>-64.61524943181001</longitude>
+					<latitude>17.80650417326031</latitude>
+					<altitude>0</altitude>
+					<heading>14.67289471019398</heading>
+					<tilt>41.35967029699538</tilt>
+					<range>6249.726736963002</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#m_ylw-pushpin0</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>-64.71148888888889,17.75911111111111,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Cane Bay West</name>
+				<description>Rough estimation as request from Leslie</description>
+				<LookAt>
+					<longitude>-64.83754645852275</longitude>
+					<latitude>17.7715201053638</latitude>
+					<altitude>0</altitude>
+					<heading>13.27045933634068</heading>
+					<tilt>29.01796194661105</tilt>
+					<range>11733.9291917855</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#m_ylw-pushpin0</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>-64.83836538439954,17.76475469265999,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>White Horse (WH)</name>
+				<description>UVI APAL Monitoring</description>
+				<LookAt>
+					<longitude>-64.72257094321552</longitude>
+					<latitude>17.80094437185258</latitude>
+					<altitude>0</altitude>
+					<heading>13.31028523404177</heading>
+					<tilt>29.28481565961845</tilt>
+					<range>58851.26205376678</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#m_ylw-pushpin0</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>-64.74867,17.78701111111111,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Channel Rock (CR)</name>
+				<description>UVI APAL Monitoring</description>
+				<LookAt>
+					<longitude>-64.7421158579334</longitude>
+					<latitude>17.78274406088649</latitude>
+					<altitude>0</altitude>
+					<heading>13.30650152031806</heading>
+					<tilt>33.7468781739137</tilt>
+					<range>12252.10383929148</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#m_ylw-pushpin0</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>-64.59161,17.76713055555555,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Teague Bay West (TBW)</name>
+				<description>UVI APAL Monitoring Site</description>
+				<LookAt>
+					<longitude>-64.68800505119418</longitude>
+					<latitude>17.8101036474307</latitude>
+					<altitude>0</altitude>
+					<heading>13.29726093054594</heading>
+					<tilt>40.69235924254945</tilt>
+					<range>59020.46613663092</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#m_ylw-pushpin0</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>-64.61577,17.76483,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Teague Bay East (TBE)</name>
+				<description>UVI APAL Monitoring</description>
+				<LookAt>
+					<longitude>-64.62181417656366</longitude>
+					<latitude>17.77760749732488</latitude>
+					<altitude>0</altitude>
+					<heading>13.28997776362527</heading>
+					<tilt>50.0066583002541</tilt>
+					<range>7223.243903847254</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#m_ylw-pushpin0</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>-64.60087,17.76215,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Green Cay (GC)</name>
+				<description>UVI APAL Monitoring turtle poop</description>
+				<LookAt>
+					<longitude>-64.63332250613435</longitude>
+					<latitude>17.79821316532475</latitude>
+					<altitude>0</altitude>
+					<heading>13.28648464772851</heading>
+					<tilt>50.06846825055542</tilt>
+					<range>16210.98054559277</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#m_ylw-pushpin0</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>-64.66393888888889,17.76806944444444,0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Document id="root_doc">
+			<name>Buck Island Sampled</name>
+			<Schema name="Var2" id="Var2">
+				<SimpleField type="string" name="Var2"></SimpleField>
+				<SimpleField type="int" name="ACER"></SimpleField>
+				<SimpleField type="int" name="APAL"></SimpleField>
+				<SimpleField type="int" name="DEND"></SimpleField>
+				<SimpleField type="int" name="OANN"></SimpleField>
+				<SimpleField type="int" name="OFAV"></SimpleField>
+				<SimpleField type="int" name="OFRA"></SimpleField>
+				<SimpleField type="int" name="other"></SimpleField>
+				<SimpleField type="int" name="PAST"></SimpleField>
+				<SimpleField type="int" name="PSTR"></SimpleField>
+			</Schema>
+			<Style id="sh_ylw-pushpin">
+				<IconStyle>
+					<color>ff0880fd</color>
+					<scale>1.2</scale>
+				</IconStyle>
+			</Style>
+			<Style id="sh_ylw-pushpin0">
+				<IconStyle>
+					<color>fffba812</color>
+					<scale>1.2</scale>
+				</IconStyle>
+			</Style>
+			<StyleMap id="msn_ylw-pushpin">
+				<Pair>
+					<key>normal</key>
+					<styleUrl>#sn_ylw-pushpin1</styleUrl>
+				</Pair>
+				<Pair>
+					<key>highlight</key>
+					<styleUrl>#sh_ylw-pushpin1</styleUrl>
+				</Pair>
+			</StyleMap>
+			<Style id="sh_ylw-pushpin1">
+				<IconStyle>
+					<color>ff06ff21</color>
+					<scale>1.2</scale>
+				</IconStyle>
+			</Style>
+			<Style id="sn_ylw-pushpin0">
+				<IconStyle>
+					<color>fffba812</color>
+				</IconStyle>
+			</Style>
+			<StyleMap id="msn_ylw-pushpin1">
+				<Pair>
+					<key>normal</key>
+					<styleUrl>#sn_ylw-pushpin</styleUrl>
+				</Pair>
+				<Pair>
+					<key>highlight</key>
+					<styleUrl>#sh_ylw-pushpin</styleUrl>
+				</Pair>
+			</StyleMap>
+			<Style id="sn_ylw-pushpin1">
+				<IconStyle>
+					<color>ff06ff21</color>
+				</IconStyle>
+			</Style>
+			<Style id="sn_ylw-pushpin">
+				<IconStyle>
+					<color>ff0880fd</color>
+				</IconStyle>
+			</Style>
+			<StyleMap id="msn_ylw-pushpin0">
+				<Pair>
+					<key>normal</key>
+					<styleUrl>#sn_ylw-pushpin0</styleUrl>
+				</Pair>
+				<Pair>
+					<key>highlight</key>
+					<styleUrl>#sh_ylw-pushpin0</styleUrl>
+				</Pair>
+			</StyleMap>
+			<Folder>
+				<name>Var2</name>
+				<Placemark>
+					<styleUrl>#msn_ylw-pushpin1</styleUrl>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">2021_BUIS1</SimpleData>
+							<SimpleData name="ACER">0</SimpleData>
+							<SimpleData name="APAL">16</SimpleData>
+							<SimpleData name="DEND">3</SimpleData>
+							<SimpleData name="OANN">10</SimpleData>
+							<SimpleData name="OFAV">2</SimpleData>
+							<SimpleData name="OFRA">3</SimpleData>
+							<SimpleData name="other">1</SimpleData>
+							<SimpleData name="PAST">7</SimpleData>
+							<SimpleData name="PSTR">7</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-64.6119462795686,17.784984122303,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">2021_BUIS2</SimpleData>
+							<SimpleData name="ACER">5</SimpleData>
+							<SimpleData name="APAL">4</SimpleData>
+							<SimpleData name="DEND">0</SimpleData>
+							<SimpleData name="OANN">13</SimpleData>
+							<SimpleData name="OFAV">10</SimpleData>
+							<SimpleData name="OFRA">7</SimpleData>
+							<SimpleData name="other">0</SimpleData>
+							<SimpleData name="PAST">15</SimpleData>
+							<SimpleData name="PSTR">15</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-64.6128826641032,17.790156794388,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">2021_BUIS4</SimpleData>
+							<SimpleData name="ACER">0</SimpleData>
+							<SimpleData name="APAL">5</SimpleData>
+							<SimpleData name="DEND">0</SimpleData>
+							<SimpleData name="OANN">8</SimpleData>
+							<SimpleData name="OFAV">4</SimpleData>
+							<SimpleData name="OFRA">5</SimpleData>
+							<SimpleData name="other">0</SimpleData>
+							<SimpleData name="PAST">0</SimpleData>
+							<SimpleData name="PSTR">0</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-64.6143916675905,17.7906518354095,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">2021_BUIS5</SimpleData>
+							<SimpleData name="ACER">4</SimpleData>
+							<SimpleData name="APAL">1</SimpleData>
+							<SimpleData name="DEND">0</SimpleData>
+							<SimpleData name="OANN">2</SimpleData>
+							<SimpleData name="OFAV">5</SimpleData>
+							<SimpleData name="OFRA">7</SimpleData>
+							<SimpleData name="other">0</SimpleData>
+							<SimpleData name="PAST">0</SimpleData>
+							<SimpleData name="PSTR">0</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-64.6120081685105,17.7901514212842,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">2021_Flat Rock</SimpleData>
+							<SimpleData name="ACER">33</SimpleData>
+							<SimpleData name="APAL">0</SimpleData>
+							<SimpleData name="DEND">0</SimpleData>
+							<SimpleData name="OANN">0</SimpleData>
+							<SimpleData name="OFAV">8</SimpleData>
+							<SimpleData name="OFRA">0</SimpleData>
+							<SimpleData name="other">0</SimpleData>
+							<SimpleData name="PAST">0</SimpleData>
+							<SimpleData name="PSTR">0</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-64.9878817490701,18.3163978645045,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">2021_Fortuna Bay</SimpleData>
+							<SimpleData name="ACER">0</SimpleData>
+							<SimpleData name="APAL">12</SimpleData>
+							<SimpleData name="DEND">0</SimpleData>
+							<SimpleData name="OANN">1</SimpleData>
+							<SimpleData name="OFAV">3</SimpleData>
+							<SimpleData name="OFRA">0</SimpleData>
+							<SimpleData name="other">0</SimpleData>
+							<SimpleData name="PAST">2</SimpleData>
+							<SimpleData name="PSTR">1</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-65.0159618866286,18.3446591680771,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">2021_Hawks Nest Bay</SimpleData>
+							<SimpleData name="ACER">0</SimpleData>
+							<SimpleData name="APAL">9</SimpleData>
+							<SimpleData name="DEND">0</SimpleData>
+							<SimpleData name="OANN">1</SimpleData>
+							<SimpleData name="OFAV">0</SimpleData>
+							<SimpleData name="OFRA">18</SimpleData>
+							<SimpleData name="other">2</SimpleData>
+							<SimpleData name="PAST">18</SimpleData>
+							<SimpleData name="PSTR">19</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-64.78117000184611,18.3486656510186,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">2021_Tektite</SimpleData>
+							<SimpleData name="ACER">0</SimpleData>
+							<SimpleData name="APAL">0</SimpleData>
+							<SimpleData name="DEND">0</SimpleData>
+							<SimpleData name="OANN">18</SimpleData>
+							<SimpleData name="OFAV">0</SimpleData>
+							<SimpleData name="OFRA">0</SimpleData>
+							<SimpleData name="other">4</SimpleData>
+							<SimpleData name="PAST">0</SimpleData>
+							<SimpleData name="PSTR">0</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-64.7617415019443,18.3363621189658,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<styleUrl>#msn_ylw-pushpin</styleUrl>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">BIA</SimpleData>
+							<SimpleData name="ACER">0</SimpleData>
+							<SimpleData name="APAL">0</SimpleData>
+							<SimpleData name="DEND">0</SimpleData>
+							<SimpleData name="OANN">16</SimpleData>
+							<SimpleData name="OFAV">0</SimpleData>
+							<SimpleData name="OFRA">0</SimpleData>
+							<SimpleData name="other">0</SimpleData>
+							<SimpleData name="PAST">17</SimpleData>
+							<SimpleData name="PSTR">16</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-64.6095276690487,17.7870488048968,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<styleUrl>#msn_ylw-pushpin</styleUrl>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">BIB</SimpleData>
+							<SimpleData name="ACER">0</SimpleData>
+							<SimpleData name="APAL">0</SimpleData>
+							<SimpleData name="DEND">0</SimpleData>
+							<SimpleData name="OANN">6</SimpleData>
+							<SimpleData name="OFAV">0</SimpleData>
+							<SimpleData name="OFRA">3</SimpleData>
+							<SimpleData name="other">0</SimpleData>
+							<SimpleData name="PAST">8</SimpleData>
+							<SimpleData name="PSTR">4</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-64.6094711430903,17.7861877770296,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<styleUrl>#msn_ylw-pushpin1</styleUrl>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">BIC</SimpleData>
+							<SimpleData name="ACER">0</SimpleData>
+							<SimpleData name="APAL">0</SimpleData>
+							<SimpleData name="DEND">0</SimpleData>
+							<SimpleData name="OANN">0</SimpleData>
+							<SimpleData name="OFAV">13</SimpleData>
+							<SimpleData name="OFRA">15</SimpleData>
+							<SimpleData name="other">1</SimpleData>
+							<SimpleData name="PAST">7</SimpleData>
+							<SimpleData name="PSTR">5</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-64.61379195540211,17.7835744614713,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<styleUrl>#msn_ylw-pushpin0</styleUrl>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">BID</SimpleData>
+							<SimpleData name="ACER">0</SimpleData>
+							<SimpleData name="APAL">0</SimpleData>
+							<SimpleData name="DEND">0</SimpleData>
+							<SimpleData name="OANN">0</SimpleData>
+							<SimpleData name="OFAV">0</SimpleData>
+							<SimpleData name="OFRA">0</SimpleData>
+							<SimpleData name="other">0</SimpleData>
+							<SimpleData name="PAST">10</SimpleData>
+							<SimpleData name="PSTR">15</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-64.63547371476891,17.801653503254,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">BLP</SimpleData>
+							<SimpleData name="ACER">0</SimpleData>
+							<SimpleData name="APAL">0</SimpleData>
+							<SimpleData name="DEND">0</SimpleData>
+							<SimpleData name="OANN">11</SimpleData>
+							<SimpleData name="OFAV">2</SimpleData>
+							<SimpleData name="OFRA">15</SimpleData>
+							<SimpleData name="other">0</SimpleData>
+							<SimpleData name="PAST">20</SimpleData>
+							<SimpleData name="PSTR">7</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-64.9853963636364,18.3445474545455,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">BOT</SimpleData>
+							<SimpleData name="ACER">0</SimpleData>
+							<SimpleData name="APAL">26</SimpleData>
+							<SimpleData name="DEND">0</SimpleData>
+							<SimpleData name="OANN">0</SimpleData>
+							<SimpleData name="OFAV">0</SimpleData>
+							<SimpleData name="OFRA">0</SimpleData>
+							<SimpleData name="other">0</SimpleData>
+							<SimpleData name="PAST">0</SimpleData>
+							<SimpleData name="PSTR">16</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-65.0330114285714,18.3585688095238,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">BUK</SimpleData>
+							<SimpleData name="ACER">21</SimpleData>
+							<SimpleData name="APAL">0</SimpleData>
+							<SimpleData name="DEND">0</SimpleData>
+							<SimpleData name="OANN">16</SimpleData>
+							<SimpleData name="OFAV">0</SimpleData>
+							<SimpleData name="OFRA">16</SimpleData>
+							<SimpleData name="other">2</SimpleData>
+							<SimpleData name="PAST">16</SimpleData>
+							<SimpleData name="PSTR">16</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-64.89832343814859,18.2782350475946,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">BUT</SimpleData>
+							<SimpleData name="ACER">0</SimpleData>
+							<SimpleData name="APAL">25</SimpleData>
+							<SimpleData name="DEND">0</SimpleData>
+							<SimpleData name="OANN">0</SimpleData>
+							<SimpleData name="OFAV">0</SimpleData>
+							<SimpleData name="OFRA">0</SimpleData>
+							<SimpleData name="other">0</SimpleData>
+							<SimpleData name="PAST">0</SimpleData>
+							<SimpleData name="PSTR">0</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-64.8910923678428,17.7504143793136,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">COK</SimpleData>
+							<SimpleData name="ACER">0</SimpleData>
+							<SimpleData name="APAL">0</SimpleData>
+							<SimpleData name="DEND">0</SimpleData>
+							<SimpleData name="OANN">6</SimpleData>
+							<SimpleData name="OFAV">3</SimpleData>
+							<SimpleData name="OFRA">16</SimpleData>
+							<SimpleData name="other">0</SimpleData>
+							<SimpleData name="PAST">16</SimpleData>
+							<SimpleData name="PSTR">17</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-64.8648751018377,18.3506406186583,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">COW</SimpleData>
+							<SimpleData name="ACER">22</SimpleData>
+							<SimpleData name="APAL">28</SimpleData>
+							<SimpleData name="DEND">0</SimpleData>
+							<SimpleData name="OANN">0</SimpleData>
+							<SimpleData name="OFAV">0</SimpleData>
+							<SimpleData name="OFRA">0</SimpleData>
+							<SimpleData name="other">0</SimpleData>
+							<SimpleData name="PAST">0</SimpleData>
+							<SimpleData name="PSTR">0</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-10.375435514863,18.3045900892581,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">FLR</SimpleData>
+							<SimpleData name="ACER">0</SimpleData>
+							<SimpleData name="APAL">19</SimpleData>
+							<SimpleData name="DEND">0</SimpleData>
+							<SimpleData name="OANN">17</SimpleData>
+							<SimpleData name="OFAV">22</SimpleData>
+							<SimpleData name="OFRA">18</SimpleData>
+							<SimpleData name="other">0</SimpleData>
+							<SimpleData name="PAST">0</SimpleData>
+							<SimpleData name="PSTR">20</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-64.99029802083329,18.3178477083333,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">GSJ</SimpleData>
+							<SimpleData name="ACER">24</SimpleData>
+							<SimpleData name="APAL">0</SimpleData>
+							<SimpleData name="DEND">0</SimpleData>
+							<SimpleData name="OANN">0</SimpleData>
+							<SimpleData name="OFAV">0</SimpleData>
+							<SimpleData name="OFRA">0</SimpleData>
+							<SimpleData name="other">0</SimpleData>
+							<SimpleData name="PAST">0</SimpleData>
+							<SimpleData name="PSTR">0</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-64.82771,18.3056,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">IBR</SimpleData>
+							<SimpleData name="ACER">20</SimpleData>
+							<SimpleData name="APAL">34</SimpleData>
+							<SimpleData name="DEND">0</SimpleData>
+							<SimpleData name="OANN">17</SimpleData>
+							<SimpleData name="OFAV">16</SimpleData>
+							<SimpleData name="OFRA">12</SimpleData>
+							<SimpleData name="other">0</SimpleData>
+							<SimpleData name="PAST">18</SimpleData>
+							<SimpleData name="PSTR">18</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-64.96427768388889,18.3794800202519,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">MEG</SimpleData>
+							<SimpleData name="ACER">0</SimpleData>
+							<SimpleData name="APAL">0</SimpleData>
+							<SimpleData name="DEND">0</SimpleData>
+							<SimpleData name="OANN">17</SimpleData>
+							<SimpleData name="OFAV">18</SimpleData>
+							<SimpleData name="OFRA">18</SimpleData>
+							<SimpleData name="other">0</SimpleData>
+							<SimpleData name="PAST">18</SimpleData>
+							<SimpleData name="PSTR">14</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-64.92914399326111,18.3721226472353,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">MER</SimpleData>
+							<SimpleData name="ACER">20</SimpleData>
+							<SimpleData name="APAL">0</SimpleData>
+							<SimpleData name="DEND">0</SimpleData>
+							<SimpleData name="OANN">0</SimpleData>
+							<SimpleData name="OFAV">0</SimpleData>
+							<SimpleData name="OFRA">0</SimpleData>
+							<SimpleData name="other">0</SimpleData>
+							<SimpleData name="PAST">0</SimpleData>
+							<SimpleData name="PSTR">0</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-65.04238345,18.353308055,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">SAP</SimpleData>
+							<SimpleData name="ACER">2</SimpleData>
+							<SimpleData name="APAL">19</SimpleData>
+							<SimpleData name="DEND">0</SimpleData>
+							<SimpleData name="OANN">18</SimpleData>
+							<SimpleData name="OFAV">16</SimpleData>
+							<SimpleData name="OFRA">0</SimpleData>
+							<SimpleData name="other">0</SimpleData>
+							<SimpleData name="PAST">15</SimpleData>
+							<SimpleData name="PSTR">17</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-64.84802886376229,18.3355572296666,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">SEA</SimpleData>
+							<SimpleData name="ACER">0</SimpleData>
+							<SimpleData name="APAL">0</SimpleData>
+							<SimpleData name="DEND">0</SimpleData>
+							<SimpleData name="OANN">1</SimpleData>
+							<SimpleData name="OFAV">0</SimpleData>
+							<SimpleData name="OFRA">4</SimpleData>
+							<SimpleData name="other">0</SimpleData>
+							<SimpleData name="PAST">3</SimpleData>
+							<SimpleData name="PSTR">1</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-64.86793,18.29438,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">SRA</SimpleData>
+							<SimpleData name="ACER">0</SimpleData>
+							<SimpleData name="APAL">21</SimpleData>
+							<SimpleData name="DEND">0</SimpleData>
+							<SimpleData name="OANN">17</SimpleData>
+							<SimpleData name="OFAV">17</SimpleData>
+							<SimpleData name="OFRA">4</SimpleData>
+							<SimpleData name="other">0</SimpleData>
+							<SimpleData name="PAST">16</SimpleData>
+							<SimpleData name="PSTR">16</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-64.7564906022092,17.7817869975467,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">SRB</SimpleData>
+							<SimpleData name="ACER">0</SimpleData>
+							<SimpleData name="APAL">1</SimpleData>
+							<SimpleData name="DEND">1</SimpleData>
+							<SimpleData name="OANN">11</SimpleData>
+							<SimpleData name="OFAV">13</SimpleData>
+							<SimpleData name="OFRA">7</SimpleData>
+							<SimpleData name="other">0</SimpleData>
+							<SimpleData name="PAST">24</SimpleData>
+							<SimpleData name="PSTR">18</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-64.7605073299259,17.7850736349821,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">THC</SimpleData>
+							<SimpleData name="ACER">20</SimpleData>
+							<SimpleData name="APAL">29</SimpleData>
+							<SimpleData name="DEND">0</SimpleData>
+							<SimpleData name="OANN">0</SimpleData>
+							<SimpleData name="OFAV">0</SimpleData>
+							<SimpleData name="OFRA">0</SimpleData>
+							<SimpleData name="other">0</SimpleData>
+							<SimpleData name="PAST">0</SimpleData>
+							<SimpleData name="PSTR">0</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-64.8560721733616,18.356765923182,0</coordinates>
+					</Point>
+				</Placemark>
+				<Placemark>
+					<ExtendedData>
+						<SchemaData schemaUrl="#Var2">
+							<SimpleData name="Var2">UVI</SimpleData>
+							<SimpleData name="ACER">0</SimpleData>
+							<SimpleData name="APAL">0</SimpleData>
+							<SimpleData name="DEND">0</SimpleData>
+							<SimpleData name="OANN">0</SimpleData>
+							<SimpleData name="OFAV">16</SimpleData>
+							<SimpleData name="OFRA">0</SimpleData>
+							<SimpleData name="other">0</SimpleData>
+							<SimpleData name="PAST">0</SimpleData>
+							<SimpleData name="PSTR">0</SimpleData>
+						</SchemaData>
+					</ExtendedData>
+					<Point>
+						<coordinates>-64.98236,18.34386,0</coordinates>
+					</Point>
+				</Placemark>
+			</Folder>
+		</Document>
+	</Folder>
+</Document>
+</kml>
