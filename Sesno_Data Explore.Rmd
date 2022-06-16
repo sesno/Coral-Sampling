@@ -16,7 +16,7 @@ editor_options:
 ```{r setup, message=FALSE, warning=FALSE, echo=FALSE}
 rm(list=ls(all=TRUE))
 
-results <- read.csv("Data/Genotype_Samples_2022.csv", header=T, na.strings="na")
+results <- read.csv("Data/Genotype_Samples_2022.csv", header=T, na.strings="NA")
 
 library("plyr") 
 library("dplyr")
@@ -33,7 +33,7 @@ library("webshot")
 
 # Species Counts by Location
 ## St. Thomas
-```{r data explore, echo=FALSE}
+```{r data explore STT, echo=FALSE}
 
 spcountSTT <- 
   results %>% 
@@ -117,7 +117,7 @@ saveWidget(spcountColorSTT, "Documents/spcounttable.html_StThomas") #would love 
 
 
 ## St. Croix
-```{r data explore, echo=FALSE}
+```{r data explore STX, echo=FALSE}
 
 spcountSTX <- 
   results %>% 
@@ -138,13 +138,95 @@ spcountColorSTX <-
   formatStyle('BIA', 
               color = styleInterval(c(11, 14, 15), 
                                     c('red', 'purple', 'green','green')), 
-              fontWeight = styleInterval(14, c('normal', 'bold')))
+              fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+  formatStyle('BIB', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+  formatStyle('BIC', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+  formatStyle('BID', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+  formatStyle('BUT', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+  formatStyle('SRB', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold'))) 
  
   
 
 
 saveWidget(spcountColorSTX, "Documents/spcounttable_StCroix.html") #would love to figure out a different way to save so we don't have all the excess html stuff...
   
+
+```
+
+## STX combine 2021 and 2022
+```{r data explore STX21and22, echo=FALSE}
+
+results21 <- read.csv("Data/Genotype_Samples_2021.csv", header=T, na.strings="NA")
+
+spcountSTX21 <- 
+  results21 %>% 
+  select("VialID", "Species", "Location") %>% 
+  separate(col=VialID, into=c('Island', 'SampNum'), sep='_') %>% 
+  filter(Island == "STX") %>% 
+  drop_na(Species) %>% 
+  tabyl(Species, Location) 
+
+STXcounts <-
+  full_join(spcountSTX, spcountSTX21, by="Species", copy=TRUE) %>%
+  mutate_all(~replace(., is.na(.), 0)) %>% #replace NAs in ACER with 0
+  mutate(BIE = BIA + BIB, BIA = NULL, BIB = NULL) %>% 
+  mutate(BINE = BUIS4 + BUIS5 + BUIS2 + BUIS3, BUIS4=NULL, BUIS5=NULL, BUIS2=NULL, BUIS3=NULL) %>% 
+  mutate(BISE = BIC + BUIS1, BIC = NULL, BUIS1 = NULL) %>% 
+  dplyr::rename(BINW=BID) %>% 
+  select("Species", "BIE","BINE", "BINW", "BISE", "BUT", "SRA", "SRB")
+
+STXallcountsColor <-
+  STXcounts %>% 
+  datatable(head(STXcounts), class = 'cell-border stripe hover compact') %>%
+  formatStyle('Species', fontWeight = 'bold') %>% 
+  formatStyle('BINW', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+    formatStyle('BUT', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+    formatStyle('SRA', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+    formatStyle('SRB', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+    formatStyle('BIE', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+    formatStyle('BINE', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+    formatStyle('BISE', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold')))
+
+
+
+
+
 
 ```
 
