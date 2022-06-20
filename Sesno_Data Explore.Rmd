@@ -223,10 +223,7 @@ STXallcountsColor <-
                                     c('red', 'purple', 'green','green')), 
               fontWeight = styleInterval(14, c('normal', 'bold')))
 
-
-
-
-
+saveWidget(STXallcountsColor, "Documents/spcounttable_StCroixTotal.html") 
 
 ```
 
