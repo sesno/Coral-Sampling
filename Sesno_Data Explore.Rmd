@@ -28,7 +28,6 @@ library("janitor") #allows to group by Location (group_by wasn't working properl
 library("DT") #used to create html file with color coded species counts
 library("webshot")
 
-
 ```
 
 # Species Counts by Location
@@ -117,6 +116,7 @@ saveWidget(spcountColorSTT, "Documents/spcounttable.html_StThomas") #would love 
 
 
 ## St. Croix
+###St. Croix 2022 only
 ```{r data explore STX, echo=FALSE}
 
 spcountSTX <- 
@@ -158,7 +158,12 @@ spcountColorSTX <-
   formatStyle('SRB', 
               color = styleInterval(c(11, 14, 15), 
                                     c('red', 'purple', 'green','green')), 
-              fontWeight = styleInterval(14, c('normal', 'bold'))) 
+              fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+  formatStyle('CBE', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold')))
+  
  
   
 
@@ -188,7 +193,7 @@ STXcounts <-
   mutate(BINE = BUIS4 + BUIS5 + BUIS2 + BUIS3, BUIS4=NULL, BUIS5=NULL, BUIS2=NULL, BUIS3=NULL) %>% 
   mutate(BISE = BIC + BUIS1, BIC = NULL, BUIS1 = NULL) %>% 
   dplyr::rename(BINW=BID) %>% 
-  select("Species", "BIE","BINE", "BINW", "BISE", "BUT", "SRA", "SRB")
+  select("Species", "BIE","BINE", "BINW", "BISE", "BUT","CBE", "SRA", "SRB")
 
 STXallcountsColor <-
   STXcounts %>% 
@@ -221,20 +226,23 @@ STXallcountsColor <-
     formatStyle('BISE', 
               color = styleInterval(c(11, 14, 15), 
                                     c('red', 'purple', 'green','green')), 
-              fontWeight = styleInterval(14, c('normal', 'bold')))
+              fontWeight = styleInterval(14, c('normal', 'bold'))) %>%
+    formatStyle('CBE', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold'))) 
 
 saveWidget(STXallcountsColor, "Documents/spcounttable_StCroixTotal.html") 
 
 ```
 
-
-# GPS Data Exploration
+# GPS Data Exploration and Point Matching
 ```{r}
 
 #create new data frame gpsUpdate that accurately represents the time for correct time zone. Will use this to autofind corresponding times in our metadata sheet
 
 #read csv, change file name to the file that matches the day you are exploring
-gps <- read.csv("Data/GPS Data/GPS_COK_26May2022.csv", header=T, na.strings="NA", stringsAsFactors=FALSE)
+gps <- read.csv("Data/GPS Data/GPS_CBE_19Jun2022.csv", header=T, na.strings="NA", stringsAsFactors=FALSE)
 
 gpsUpdate <- 
   gps %>% 
@@ -266,14 +274,14 @@ gpsUpdate <-
 
 resultsforgps <-
   results %>% 
-    select("Date","VialID", "Tag..", "Time.Collected", "Latitude", "Longitude") %>% 
+    select("Date","VialID", "Tag..", "Time.Collected") %>% 
     rename(Time=Time.Collected)
 
 gpsMatched <-
-  full_join(resultsforgps, gpsUpdate, by = c("Date","Time"))
+  inner_join(resultsforgps, gpsUpdate, by = c("Date","Time"))
 
 #Save CSV file, change name to match date explored
-#write.csv(gpsMatched,"Data/GPS Data/GPS_COK_24May2022_matched2.csv", row.names = TRUE)
+write.csv(gpsMatched,"Data/GPS Data/GPS_CBE_19Jun2022_matched2.csv", row.names = TRUE)
 
     
 ```
