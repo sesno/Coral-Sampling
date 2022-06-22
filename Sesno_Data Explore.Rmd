@@ -162,7 +162,11 @@ spcountColorSTX <-
   formatStyle('CBE', 
               color = styleInterval(c(11, 14, 15), 
                                     c('red', 'purple', 'green','green')), 
-              fontWeight = styleInterval(14, c('normal', 'bold')))
+              fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+  formatStyle('SRC', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold')))  
   
  
   
@@ -193,7 +197,7 @@ STXcounts <-
   mutate(BINE = BUIS4 + BUIS5 + BUIS2 + BUIS3, BUIS4=NULL, BUIS5=NULL, BUIS2=NULL, BUIS3=NULL) %>% 
   mutate(BISE = BIC + BUIS1, BIC = NULL, BUIS1 = NULL) %>% 
   dplyr::rename(BINW=BID) %>% 
-  select("Species", "BIE","BINE", "BINW", "BISE", "BUT","CBE", "SRA", "SRB")
+  select("Species", "BIE","BINE", "BINW", "BISE", "BUT","CBE", "SRA", "SRB", "SRC")
 
 STXallcountsColor <-
   STXcounts %>% 
@@ -230,7 +234,11 @@ STXallcountsColor <-
     formatStyle('CBE', 
               color = styleInterval(c(11, 14, 15), 
                                     c('red', 'purple', 'green','green')), 
-              fontWeight = styleInterval(14, c('normal', 'bold'))) 
+              fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+    formatStyle('SRC', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold')))
 
 saveWidget(STXallcountsColor, "Documents/spcounttable_StCroixTotal.html") 
 
