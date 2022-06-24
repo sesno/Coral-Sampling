@@ -166,11 +166,18 @@ spcountColorSTX <-
   formatStyle('SRC', 
               color = styleInterval(c(11, 14, 15), 
                                     c('red', 'purple', 'green','green')), 
-              fontWeight = styleInterval(14, c('normal', 'bold')))  
+              fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+  formatStyle('BIZ', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+  formatStyle('TBW', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold')))
   
  
   
-
 
 saveWidget(spcountColorSTX, "Documents/spcounttable_StCroix.html") #would love to figure out a different way to save so we don't have all the excess html stuff...
   
@@ -197,7 +204,7 @@ STXcounts <-
   mutate(BINE = BUIS4 + BUIS5 + BUIS2 + BUIS3, BUIS4=NULL, BUIS5=NULL, BUIS2=NULL, BUIS3=NULL) %>% 
   mutate(BISE = BIC + BUIS1, BIC = NULL, BUIS1 = NULL) %>% 
   dplyr::rename(BINW=BID) %>% 
-  select("Species", "BIE","BINE", "BINW", "BISE", "BUT","CBE", "SRA", "SRB", "SRC")
+  select("Species", "BIE","BINE", "BINW", "BISE", "BUT","CBE", "SRA", "SRB", "SRC", "BIZ", "TBW")
 
 STXallcountsColor <-
   STXcounts %>% 
@@ -238,6 +245,14 @@ STXallcountsColor <-
     formatStyle('SRC', 
               color = styleInterval(c(11, 14, 15), 
                                     c('red', 'purple', 'green','green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+    formatStyle('BIZ', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
+              fontWeight = styleInterval(14, c('normal', 'bold'))) %>% 
+    formatStyle('TBW', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')), 
               fontWeight = styleInterval(14, c('normal', 'bold')))
 
 saveWidget(STXallcountsColor, "Documents/spcounttable_StCroixTotal.html") 
@@ -250,7 +265,7 @@ saveWidget(STXallcountsColor, "Documents/spcounttable_StCroixTotal.html")
 #create new data frame gpsUpdate that accurately represents the time for correct time zone. Will use this to autofind corresponding times in our metadata sheet
 
 #read csv, change file name to the file that matches the day you are exploring
-gps <- read.csv("Data/GPS Data/GPS_CBE_19Jun2022.csv", header=T, na.strings="NA", stringsAsFactors=FALSE)
+gps <- read.csv("Data/GPS Data/GPS_BIZ_23Jun2022.csv", header=T, na.strings="NA", stringsAsFactors=FALSE)
 
 gpsUpdate <- 
   gps %>% 
@@ -286,10 +301,10 @@ resultsforgps <-
     rename(Time=Time.Collected)
 
 gpsMatched <-
-  inner_join(resultsforgps, gpsUpdate, by = c("Date","Time"))
+  inner_join(resultsforgps, gpsUpdate, by = c("Date","Time")) #inner join to only keep the matched values
 
 #Save CSV file, change name to match date explored
-write.csv(gpsMatched,"Data/GPS Data/GPS_CBE_19Jun2022_matched2.csv", row.names = TRUE)
+write.csv(gpsMatched,"Data/GPS Data/GPS_BIZ_23Jun2022_matched2.csv", row.names = TRUE)
 
     
 ```
