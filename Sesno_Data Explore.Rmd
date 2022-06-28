@@ -178,10 +178,8 @@ spcountColorSTX <-
   formatStyle('THO', 
               color = styleInterval(c(11, 14, 15), 
                                     c('red', 'purple', 'green','green')), 
-              fontWeight = styleInterval(14, c('normal', 'bold')))
-  
- 
-  
+              fontWeight = styleInterval(14, c('normal', 'bold'))) 
+
 
 saveWidget(spcountColorSTX, "Documents/spcounttable_StCroix.html") #would love to figure out a different way to save so we don't have all the excess html stuff...
   
@@ -264,6 +262,8 @@ STXallcountsColor <-
               fontWeight = styleInterval(14, c('normal', 'bold')))
 
 saveWidget(STXallcountsColor, "Documents/spcounttable_StCroixTotal.html") 
+
+
 
 ```
 
