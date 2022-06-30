@@ -346,6 +346,21 @@
   </Placemark>
   <Placemark>
 	<ExtendedData><SchemaData schemaUrl="#Var2">
+		<SimpleData name="Var2">FRD</SimpleData>
+		<SimpleData name="ACER">0</SimpleData>
+		<SimpleData name="APAL">0</SimpleData>
+		<SimpleData name="DEND">0</SimpleData>
+		<SimpleData name="OANN">16</SimpleData>
+		<SimpleData name="OFAV">15</SimpleData>
+		<SimpleData name="OFRA">17</SimpleData>
+		<SimpleData name="other">0</SimpleData>
+		<SimpleData name="PAST">17</SimpleData>
+		<SimpleData name="PSTR">15</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-64.8900995180011,17.7031494373223</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Var2">
 		<SimpleData name="Var2">GSJ</SimpleData>
 		<SimpleData name="ACER">24</SimpleData>
 		<SimpleData name="APAL">0</SimpleData>
