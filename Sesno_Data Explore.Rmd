@@ -28,6 +28,11 @@ library("janitor") #allows to group by Location (group_by wasn't working properl
 library("DT") #used to create html file with color coded species counts
 library("webshot")
 
+#TotalCount22 <-
+  #results %>% 
+  #drop_na(Species) %>% 
+  #count(Species)
+
 ```
 
 # Species Counts by Location
@@ -282,13 +287,80 @@ saveWidget(STXallcountsColor, "Documents/spcounttable_StCroixTotal.html")
 
 ```
 
+## STJ combine 2021 and 2022
+```{r data explore STX21and22, echo=FALSE}
+
+results21 <- read.csv("Data/Genotype_Samples_2021.csv", header=T, na.strings="NA")
+
+spcountSTJ21 <- 
+  results21 %>% 
+  select("VialID", "Species", "Location") %>% 
+  separate(col=VialID, into=c('Island', 'SampNum'), sep='_') %>% 
+  filter(Island == "STJ") %>% 
+  drop_na(Species) %>% 
+  tabyl(Species, Location) 
+
+spcountSTJ22 <- 
+  results %>% 
+  select("VialID", "Species", "Island") %>% 
+  filter(Island == "STJ") %>% 
+  separate(col=VialID, into=c('Location', 'SampNum'), sep='_') %>% 
+  drop_na(Species) %>% 
+  tabyl(Species, Location)
+
+STJcounts <-
+  full_join(spcountSTJ22, spcountSTJ21, by="Species", copy=TRUE) %>%
+  mutate_all(~replace(., is.na(.), 0)) %>% #replace NAs in ACER with 0
+  
+STJcountsColor <- 
+  spcountSTJ22 %>% 
+    datatable(head(STXcounts), class = 'cell-border stripe hover compact') %>%
+    formatStyle('Species', fontWeight = 'bold') %>% 
+    formatStyle('LEI', 
+                color = styleInterval(c(11, 14, 15), 
+                                      c('red', 'purple', 'green','green'))) %>% 
+    formatStyle('HNB', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green'))) %>% 
+    formatStyle('TEK', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green'))) %>% 
+    formatStyle('YAW', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green'))) %>% 
+    formatStyle('JON', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')))
+  
+STJallcountsColor <-
+  STJcounts %>% 
+  datatable(head(STJcounts), class = 'cell-border stripe hover compact') %>%
+  formatStyle('Species', fontWeight = 'bold') %>% 
+  formatStyle('LEI', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green'))) %>%
+  formatStyle('HNB', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green'))) %>% 
+  formatStyle('TEK', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green'))) %>% 
+  formatStyle('YAW', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green'))) %>% 
+  formatStyle('JON', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')))
+  
+```
+
 # GPS Data Exploration and Point Matching
-```{r}
+```{r GPS data explore}
 
 #create new data frame gpsUpdate that accurately represents the time for correct time zone. Will use this to autofind corresponding times in our metadata sheet
 
 #read csv, change file name to the file that matches the day you are exploring
-gps <- read.csv("Data/GPS Data/GPS_FRD_29Jun2022.csv", header=T, na.strings="NA", stringsAsFactors=FALSE)
+gps <- read.csv("Data/GPS Data/GPS_LEI_5Jul2022.csv", header=T, na.strings="NA", stringsAsFactors=FALSE)
 
 gpsUpdate <- 
   gps %>% 
@@ -303,7 +375,7 @@ gpsUpdate <-
     separate(col=DayHour, into=c('Day', 'Hour'), sep='T') %>% 
   #Select for relevent varaibles, remove the Z in seconds, reselect variables
     select("Year","Month","Day","Hour","Min", "lat","lon") %>%
-    mutate(Month = as.numeric(Month)) %>% 
+    #mutate(Month = sprintf("%02d", as.numeric(Month))) %>% 
   #recombine the date column into one   
     unite(col="Date", c("Month","Day","Year",), sep = "/") %>% 
   #make hour column numeric from character (not sure why it saw it as character) and ensure the seconds are 01, 02 etc.
@@ -317,7 +389,6 @@ gpsUpdate <-
   #Remove duplicate times
   distinct(Time, .keep_all=TRUE)
 
-
 resultsforgps <-
   results %>% 
     select("Date","VialID", "Tag..", "Time.Collected") %>% 
@@ -327,7 +398,7 @@ gpsMatched <-
   inner_join(resultsforgps, gpsUpdate, by = c("Date","Time")) #inner join to only keep the matched values
 
 #Save CSV file, change name to match date explored
-write.csv(gpsMatched,"Data/GPS Data/GPS_FRD_29Jun2022_matched2.csv", row.names = TRUE)
+write.csv(gpsMatched,"Data/GPS Data/GPS_LEI_5Jul2022_matched2.csv", row.names = TRUE)
 
     
 ```
