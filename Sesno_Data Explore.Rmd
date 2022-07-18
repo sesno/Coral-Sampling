@@ -337,6 +337,9 @@ STJcountsColor <-
                                     c('red', 'purple', 'green','green'))) %>% 
    formatStyle('HON', 
               color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green'))) %>% 
+   formatStyle('RFB', 
+              color = styleInterval(c(11, 14, 15), 
                                     c('red', 'purple', 'green','green'))) 
   
 STJallcountsColor <-
@@ -363,7 +366,10 @@ STJallcountsColor <-
                                     c('red', 'purple', 'green','green'))) %>% 
   formatStyle('HON', 
               color = styleInterval(c(11, 14, 15), 
-                                    c('red', 'purple', 'green','green'))) 
+                                    c('red', 'purple', 'green','green'))) %>% 
+  formatStyle('RFB', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')))
   
 ```
 
