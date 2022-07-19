@@ -30,8 +30,8 @@ library("webshot")
 
 TotalCount22 <-
   results %>% 
-  drop_na(Species) %>% 
-  count(Species)
+  drop_na(Island) %>% 
+  count(Island)
 
 
 ```
@@ -311,11 +311,12 @@ spcountSTJ22 <-
 
 STJcounts <-
   full_join(spcountSTJ22, spcountSTJ21, by="Species", copy=TRUE) %>%
-  mutate_all(~replace(., is.na(.), 0)) #replace NAs in ACER with 0
+  mutate_all(~replace(., is.na(.), 0)) %>%  #replace NAs in ACER with 0
+  mutate(HNB = HNB.y + HNB.x, HNB.y = NULL, HNB.x = NULL)
   
 STJcountsColor <- 
   spcountSTJ22 %>% 
-    datatable(head(STXcounts), class = 'cell-border stripe hover compact') %>%
+    datatable(head(STJcounts), class = 'cell-border stripe hover compact') %>%
     formatStyle('Species', fontWeight = 'bold') %>% 
     formatStyle('LEI', 
                 color = styleInterval(c(11, 14, 15), 
@@ -340,7 +341,10 @@ STJcountsColor <-
                                     c('red', 'purple', 'green','green'))) %>% 
    formatStyle('RFB', 
               color = styleInterval(c(11, 14, 15), 
-                                    c('red', 'purple', 'green','green'))) 
+                                    c('red', 'purple', 'green','green'))) %>% 
+    formatStyle('POP', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')))
   
 STJallcountsColor <-
   STJcounts %>% 
@@ -368,6 +372,9 @@ STJallcountsColor <-
               color = styleInterval(c(11, 14, 15), 
                                     c('red', 'purple', 'green','green'))) %>% 
   formatStyle('RFB', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green'))) %>% 
+  formatStyle('POP', 
               color = styleInterval(c(11, 14, 15), 
                                     c('red', 'purple', 'green','green')))
   
