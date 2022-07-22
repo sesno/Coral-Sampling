@@ -350,7 +350,10 @@ STJcountsColor <-
                                     c('red', 'purple', 'green','green'))) %>% 
     formatStyle('HAR', 
               color = styleInterval(c(11, 14, 15), 
-                                    c('red', 'purple', 'green','green'))) 
+                                    c('red', 'purple', 'green','green'))) %>% 
+    formatStyle('WIS', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')))
   
 STJallcountsColor <-
   STJcounts %>% 
@@ -388,7 +391,12 @@ STJallcountsColor <-
                                     c('red', 'purple', 'green','green'))) %>% 
   formatStyle('HAR', 
               color = styleInterval(c(11, 14, 15), 
-                                    c('red', 'purple', 'green','green'))) 
+                                    c('red', 'purple', 'green','green'))) %>% 
+  formatStyle('WIS', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green')))
+
+head(results)
   
 ```
 
