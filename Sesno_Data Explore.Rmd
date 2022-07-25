@@ -30,8 +30,8 @@ library("webshot")
 
 TotalCount22 <-
   results %>% 
-  drop_na(Island) %>% 
-  count(Island)
+  drop_na("Island") %>% 
+  count("Island")
 
 
 ```
@@ -312,7 +312,8 @@ spcountSTJ22 <-
 STJcounts <-
   full_join(spcountSTJ22, spcountSTJ21, by="Species", copy=TRUE) %>%
   mutate_all(~replace(., is.na(.), 0)) %>%  #replace NAs in ACER with 0
-  mutate(HNB = HNB.y + HNB.x, HNB.y = NULL, HNB.x = NULL)
+  mutate(HNB = HNB.y + HNB.x, HNB.y = NULL, HNB.x = NULL) %>% 
+  mutate(TEK = TEK.y + TEK.x, TEK.y = NULL, TEK.x = NULL)
   
 STJcountsColor <- 
   spcountSTJ22 %>% 
@@ -353,7 +354,10 @@ STJcountsColor <-
                                     c('red', 'purple', 'green','green'))) %>% 
     formatStyle('WIS', 
               color = styleInterval(c(11, 14, 15), 
-                                    c('red', 'purple', 'green','green')))
+                                    c('red', 'purple', 'green','green'))) %>% 
+    formatStyle('TEK', 
+              color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green'))) 
   
 STJallcountsColor <-
   STJcounts %>% 
@@ -394,6 +398,9 @@ STJallcountsColor <-
                                     c('red', 'purple', 'green','green'))) %>% 
   formatStyle('WIS', 
               color = styleInterval(c(11, 14, 15), 
+                                    c('red', 'purple', 'green','green'))) %>% 
+  formatStyle('TEK', 
+              color = styleInterval(c(11, 14, 15), 
                                     c('red', 'purple', 'green','green')))
 
 head(results)
@@ -406,7 +413,7 @@ head(results)
 #create new data frame gpsUpdate that accurately represents the time for correct time zone. Will use this to autofind corresponding times in our metadata sheet
 
 #read csv, change file name to the file that matches the day you are exploring
-gps <- read.csv("Data/GPS Data/GPS_HON_11Jul2022.csv", header=T, na.strings="NA", stringsAsFactors=FALSE)
+gps <- read.csv("Data/GPS Data/GPS_TEK_25Jul2022.csv", header=T, na.strings="NA", stringsAsFactors=FALSE)
 
 gpsUpdate <- 
   gps %>% 
@@ -431,20 +438,24 @@ gpsUpdate <-
   #recombine the hour and min of time to be one column
     unite(col="Time", c("Hour","Min"), sep=':') %>% 
   #create nuew column that establishes the date as a proper date format, not sure if necessary?
-    #mutate(Date=strptime(Date, format = "%Y-%m-%d")) 
+    #mutate(Date=strptime(Date, format = "%Y-%m-%d")) %>% 
   #Remove duplicate times
   distinct(Time, .keep_all=TRUE)
 
 resultsforgps <-
   results %>% 
     select("Date","VialID", "Tag..", "Time.Collected") %>% 
-    rename(Time=Time.Collected)
+    dplyr::rename(Time=Time.Collected) %>%
+    separate(col=Date, into=c('Month','Day','Year'), sep='/') %>% 
+    mutate(Month = sprintf("%02d", as.numeric(Month)),
+           Day = sprintf("%02d", as.numeric(Day))) %>% 
+    unite(col="Date", c("Month","Day","Year",), sep = "/")
 
 gpsMatched <-
   inner_join(resultsforgps, gpsUpdate, by = c("Date","Time")) #inner join to only keep the matched values
 
 #Save CSV file, change name to match date explored
-write.csv(gpsMatched,"Data/GPS Data/GPS_HON_11Jul2022_matched2.csv", row.names = TRUE)
+write.csv(gpsMatched,"Data/GPS Data/GPS_TEK_25Jul2022_matched2.csv", row.names = TRUE)
 
     
 ```
