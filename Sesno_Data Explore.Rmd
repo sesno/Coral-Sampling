@@ -424,7 +424,7 @@ STJallcountsColor <-
 #create new data frame gpsUpdate that accurately represents the time for correct time zone. Will use this to autofind corresponding times in our metadata sheet
 
 #read csv, change file name to the file that matches the day you are exploring
-gps <- read.csv("Data/GPS Data/GPS_TEK_25Jul2022.csv", header=T, na.strings="NA", stringsAsFactors=FALSE)
+gps <- read.csv("Data/GPS Data/GPS_STV_2Aug2022.csv", header=T, na.strings="NA", stringsAsFactors=FALSE)
 
 gpsUpdate <- 
   gps %>% 
@@ -466,7 +466,7 @@ gpsMatched <-
   inner_join(resultsforgps, gpsUpdate, by = c("Date","Time")) #inner join to only keep the matched values
 
 #Save CSV file, change name to match date explored
-write.csv(gpsMatched,"Data/GPS Data/GPS_TEK_25Jul2022_matched2.csv", row.names = TRUE)
+write.csv(gpsMatched,"Data/GPS Data/GPS_STV_2Aug2022_matched2.csv", row.names = TRUE)
 
     
 ```
