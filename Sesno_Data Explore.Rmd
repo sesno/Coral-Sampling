@@ -30,8 +30,8 @@ library("webshot")
 
 TotalCount22 <-
   results %>% 
-  drop_na("Island") %>% 
-  count("Island")
+  drop_na(Species, Island) %>% 
+  tabyl(Island, Species) 
 
 
 ```
